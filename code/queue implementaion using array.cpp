@@ -2,13 +2,14 @@
 #include <iostream>
 using namespace std;
 
-struct Queue {
-	int front, rear, capacity;
+class Queue {
+	public:
+	int front, rear, size;
 	int* queue;
 	Queue(int c)
 	{
 		front = rear = 0;
-		capacity = c;
+		size = c;
 		queue = new int;
 	}
 
@@ -19,7 +20,7 @@ struct Queue {
 	void queueEnqueue(int data)
 	{
 		// check queue is full or not
-		if (capacity == rear) {
+		if (size == rear) {
 			printf("\nQueue is full\n");
 			return;
 		}
@@ -84,9 +85,9 @@ struct Queue {
 };
 
 // Driver code
-int main(void)
+int main()
 {
-	// Create a queue of capacity 4
+	// Create a queue of size 4
 	Queue q(4);
 
 	// print Queue elements
