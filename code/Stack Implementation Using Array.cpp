@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-#define MAX 1000
+#define MAX 5
 
 
 class stack{
@@ -60,16 +60,20 @@ class stack{
 int main(){
  	
  	stack s;
- 	s.push(9);
- 	s.push(15);
- 	s.push(37);
- 	s.push(42);
+ 	for(int i=0;i<=MAX-1;i++){
+ 	    int n;
+ 	cout<<"enter elements into stack : ";
+ 	cin>>n;
+ 	s.push(n);
+ 	}
  	s.display();
  	while(!s.isEmpty()){
  		
  	cout<<"Top element is : "<<s.peek()<<"\n ";
  	cout<<"popped element is : "<<s.pop()<<"\n ";
 	}
+	cout<<"elements in stack : ";
+	s.display();
  	
  	
  }
